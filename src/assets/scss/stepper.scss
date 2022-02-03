@@ -1,0 +1,56 @@
+@import '../../assets/scss/_variables.scss';
+
+/* CIDI STEPPER */
+@media (max-width: 767px) {
+    ::ng-deep .mat-horizontal-stepper-header-container{
+      .mat-step-label{
+        display: none;
+      }
+    }
+}
+  
+@media (min-width: 768px) {
+
+    ::ng-deep .mat-horizontal-stepper-header-container{
+        align-items: center !important;
+        .mat-horizontal-stepper-header{
+            padding: 0 15px;
+        &:after,&:before{
+            display: none !important;
+        }
+        &.cdk-focused{
+            background-color: transparent;
+        }
+        .mat-step-icon-state-number,.mat-step-header-ripple,.mat-step-icon-state-edit{
+            display: none;
+        }
+        .mat-step-label{
+            padding: 1em !important;
+            border-radius: 50px;
+            border: 3px solid $color-secudandario;
+            min-width: 100px;
+            text-align: center;
+            width: inherit !important;
+
+            &.mat-step-label-selected, &.mat-step-label-active{
+            border-color: $color-primario;
+            font-weight: 500;
+            }
+        }
+        &:hover{
+            background-color: inherit;
+        }
+        }
+        .mat-stepper-horizontal-line{
+        border-top-width: 3px !important;
+        border-top-color: $color-secudandario;
+        border-top-style: solid;
+        flex: auto;
+        height: 0;
+        min-width: 32px !important;
+        margin: 0 -16px !important;
+        top: inherit !important;
+        }
+    }
+
+}

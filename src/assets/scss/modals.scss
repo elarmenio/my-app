@@ -1,0 +1,40 @@
+@import 'src/assets/scss/_variables.scss';
+
+.mat-dialog{
+  .mat-dialog-title{
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    h2{
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0;
+      width: calc(100% - 36px);
+      text-align: center;
+    }
+    .icon-close{
+      cursor: pointer;
+    }
+  }
+  &-content{}
+  &-actions{}
+}
+
+
+
+
+@media screen and (max-width: $breakpointXS) {
+
+}
+
+@media screen and (max-width: $breakpointSM) {
+
+}
+
+@media screen and (max-width: $breakpointMD) {
+
+}
+
+@media screen and (max-width: $breakpointLG) {
+
+}

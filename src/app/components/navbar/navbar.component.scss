@@ -1,0 +1,53 @@
+@import 'src/assets/scss/_variables.scss';
+
+.wrapp-nav-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 64px;
+  background: #ff5916;
+  .wrapp-header {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    max-width: 1110px;
+    .nav-icon {
+      color: #818e94;
+      font-size: 27px;
+      margin-right: 3rem;
+    }
+    .logo {
+      display: flex;
+      flex: 1;
+      .ng-image {
+       
+        height: 60px;
+      }
+    }
+    .event {
+      flex: 2;
+    }
+    .ingreso {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.button{
+  padding: 10px 39px !important;
+  box-shadow: none !important;
+  color: rgb(0, 0, 0) !important;
+  background-color: #ff9f50 !important;
+  border: 2px solid #ff9f50 !important;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

@@ -1,0 +1,101 @@
+@import 'src/assets/scss/_variables.scss';
+
+::ng-deep .contenedorLogin{
+  margin-right: calc((100vw - 1110px) / 2) !important;
+  .mat-dialog-container{
+    padding: 0;
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
+.button{
+  padding: 10px 39px !important;
+  box-shadow: none !important;
+  color: rgb(0, 0, 0) !important;
+  background-color: #ff9f50 !important;
+  border: 2px solid #ff9f50 !important;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.my-form{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+
+  ::ng-deep .mat-form-field{
+    &.mat-focused{
+
+      .mat-form-field-ripple{
+        background-color: $color-primario;
+      }
+
+      .mat-form-field-label,
+      .mat-form-field-required-marker{
+        color: $color-primario;
+      }
+    }
+  }
+
+  ::ng-deep .mat-form-field-flex{
+    padding: 0 5px 0 0;
+
+    .mat-form-field-infix{
+      padding: 15px 0 10px 0 !important;
+      margin-top: 0;
+    }
+
+    .mat-form-field-label{
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+  }
+
+}
+
+.contenedorIngresar{
+  width: 100%;
+  button{
+    font-size: 14px;
+    width: 100%;
+  }
+  p{
+    text-align: center;
+    font-size: 14px;
+    color: $texto-secundario;
+    font-weight: 500;
+    margin: 1.33em 0;
+
+    &:after, &:before{
+      display: inline-block;
+      content: "";
+      border-top: 1px solid rgba(96, 107, 126, 0.5);;
+      width: 25px;
+      margin: 4px 8px;
+    }
+  }
+}
+
+
+.wrapper {
+  .wrapper-login {
+    width: 285px;
+    min-height: 335px;
+    padding: 2em 1.75em 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+
+

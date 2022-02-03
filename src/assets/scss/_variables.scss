@@ -1,0 +1,36 @@
+/* Variables Generales - Exequiel Soler */
+
+$color-primario: #2699fb;
+$color-primario-100: #b3e5fc;
+$color-secudandario: #bfc5d1;
+$color-gris: #354052;
+$color-negro: #0e1a29;
+$color-verde: #36ca70;
+$color-amarillo: #ffba14;
+$color-naranja: #ff6f00;
+$color-rojo: #d50000;
+$texto-secundario: #606b7e;
+$bg-card: #f8f8f8;
+$color-naranja: #ff6f00;
+$bg-hero: #367bc9;
+$bg-hero-amarillo: #ffc435;
+
+$color-border: rgba(207, 216, 220, 0.5);
+
+$global-font: 'Roboto', 'Open Sans', 'Helvetica Neue', 'sans-serif' !important;
+
+$box-shadow: 0 3px 6px 0 rgba(207, 216, 220, 0.5) !important;
+
+$breakpointXS: 544.98px;
+$breakpointSM: 767.98px;
+$breakpointMD: 991.98px;
+$breakpointLG: 1199.98px;
+
+
+@mixin contenedor{
+  max-width: 1100px;
+  margin: auto;
+  display: block;
+  position: relative;
+  margin-bottom: 65px;
+}

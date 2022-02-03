@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="wrapper-login" id="wrapper-login">
+    <form class="my-form" [formGroup]='colorForm' >
+      <mat-form-field  class="full-width">
+        <mat-label>Coloque su Id</mat-label>
+        <input type="text" placeholder="id" matInput formControlName="color" class="text-input">
+      </mat-form-field>
+      <div class="contenedorIngresar">
+        <button mat-raised-button class="button" (click)="change()" form="my-form">Aceptar</button>
+      </div>
+    </form>
+    
+
+    <form class="my-form" [formGroup]='loginForm' id="my-form">
+      <mat-form-field class="full-width">
+        <input type="text" matInput placeholder="usuario" formControlName="usuario" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Ingresá tu contraseña" formControlName="password">
+      </mat-form-field>
+    </form>
+    <div class="contenedorIngresar">
+      <button mat-raised-button class="button" (click)="onSubmit()" form="my-form">Ingresar</button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,351 @@
+@import '../../assets/scss/_variables.scss';
+
+@mixin btnBase{
+  //font-family: $global-font;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 6px 39px !important;
+  box-shadow: none !important;
+  .mat-button-focus-overlay{
+    display: none !important;
+  }
+}
+
+@mixin btnBaseXS{
+  @include btnBase;
+  padding: 10px 20px !important;
+  line-height: 1 !important;
+  margin-left: 1rem !important;
+  min-width: initial !important;
+}
+
+@mixin btnValidar{
+  display: flex;
+  flex-shrink: 0;
+  height: fit-content;
+  max-height: 30px;
+  margin-top: 15px;
+  .mat-button-wrapper{
+    line-height: initial;
+  }
+}
+
+@mixin buttonOutlineSelectable{
+  font-size: 14px !important;
+  font-weight: normal !important;
+  color: $texto-secundario !important;
+  width: calc(100% - 30px) !important;
+  height: 54px !important;
+  border: solid 1px $color-primario-100 !important;
+  margin: 0 1em !important;
+  box-shadow: none !important;
+}
+@mixin buttonOutlineSelected{
+  @include buttonOutlineSelectable;
+  border: solid 4px $color-primario !important;
+}
+
+@mixin buttonOutlineSelectableSolid{
+  @include buttonOutlineSelectable;
+  &:disabled{
+    border: solid 4px $color-secudandario !important;
+    background-color: $color-secudandario !important;
+    color: white !important;
+  }
+}
+
+@mixin buttonOutlineSelectedSolid{
+  @include buttonOutlineSelectableSolid;
+  border: solid 4px $color-primario-100 !important;
+  background-color: $color-primario !important;
+  color: white !important;
+}
+
+.btn{
+  &--primario{
+    @include btnBase;
+    color: white !important;
+    background-color: $color-primario !important;
+    border: 2px solid $color-primario !important;
+    .mat-button-wrapper{
+      color: white;
+    }
+    &.btn--glow{
+      &:hover{
+        box-shadow: 0px 3px 10px 0px $color-primario !important;
+      }
+    }
+    &:disabled{
+      opacity: 0.5;
+      color: white !important;
+      background-color: $texto-secundario !important;
+      border-color: $texto-secundario !important;
+    }
+    &.button-validar{
+      @include btnValidar;
+      &-disabled{
+        @include btnValidar;
+      }
+    }
+    &.btn--pill{
+      border-radius: 50px;
+      line-height: 0;
+      padding: 6px 20px !important;
+      .mat-button-wrapper{
+        font-weight: normal;
+        .mat-icon{
+          margin-right: 10px;
+        }
+      }
+      &:disabled{
+        .mat-button-wrapper{
+          color: $texto-secundario !important;
+          .mat-icon{
+            color: $texto-secundario !important;
+          }
+        }
+      }
+    }
+  }
+  &--secundario{
+    @include btnBase;
+    color: white !important;
+    background-color: $texto-secundario !important;
+    .mat-button-wrapper{
+      color: white;
+    }
+    &.btn--glow{
+      &:hover{
+        box-shadow: 0px 3px 10px 0px $texto-secundario !important;
+      }
+    }
+    &:disabled{
+      opacity: 0.5;
+    }
+  }
+  &-outline{
+    &--primario{
+      @include btnBase;
+      background-color: white;
+      border: 2px solid $color-primario !important;
+      .mat-button-wrapper{
+        color: $color-primario;
+      }
+      &:disabled{
+        opacity: 0.5;
+      }
+    }
+    &--secundario{
+      @include btnBase;
+      background-color: white;
+      border: 2px solid $texto-secundario !important;
+      .mat-button-wrapper{
+        color: $texto-secundario;
+      }
+      &:disabled{
+        opacity: 0.5;
+      }
+    }
+    &--selectable{
+      @include buttonOutlineSelectable;
+      &--solid{
+        @include buttonOutlineSelectableSolid;
+      }
+    }
+    &--selected{
+      @include buttonOutlineSelected;
+      &--solid{
+        @include buttonOutlineSelectedSolid;
+      }
+    }
+  }
+  &.btn--pill{
+    @include btnBase;
+    border-radius: 50px;
+    line-height: 0;
+    padding: 5px 50px !important;
+    background-color: $color-primario-100;
+    .mat-button-wrapper{
+      display: flex;
+      align-items: center;
+      color: $color-primario;
+      font-size: 15px;
+      font-weight: normal;
+      .mat-icon{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.contenedorCardButton{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.contenedorCardButtonRow{
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    .mat-form-field {
+      &:last-child{
+        .mat-form-field-wrapper{
+          padding-bottom: 1.25em !important;
+        }
+      }
+    }
+  }
+}
+
+.cardButton{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  &.mat-stroked-button{
+    border-color: #b3e5fc !important;
+    box-shadow: 0 3px 6px 0 rgba(207, 216, 220, 0.5) !important;
+  }
+  &.signup-dni{
+    .mat-icon{
+      font-size: 69px !important;
+      line-height: 69px !important;
+    }
+  }
+  &.active{
+    &.mat-stroked-button{
+      border-color: $color-primario !important;
+      border-width: 4px !important;
+    }
+    .mat-icon,p,small{
+      color: $color-primario;
+    }
+  }
+  .mat-button-wrapper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .mat-icon{
+    margin-bottom: 0.25em;
+  }
+  p{
+    margin: 0;
+    line-height: 1.2em;
+    font-weight: 500;
+    padding: 0 15px;
+    small{
+      font-size: 12px;
+      font-weight: normal;
+      min-height: 30px;
+    }
+  }
+  &:disabled{
+    border: none !important;
+    background-color: #bfc5d1;
+    color: white !important;
+    .mat-icon{
+      color: white !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+.cardButton{
+  width: 100%;
+  margin: 0 1rem;
+  font-size: 14px !important;
+  color: #606b7e !important;
+  border: solid 1px #b3e5fc !important;
+  margin: 0 1em !important;
+  box-shadow: none !important;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  background-color: white;
+  .mat-icon{
+    font-size: 62px !important;
+    height: 62px !important;
+    width: 62px !important;
+    line-height: 62px !important;
+  }
+  p {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    small {
+      font-weight: 400;
+    }
+  }
+  &.seleccionado{
+    border: solid 4px #2699fb !important;
+  }
+  &.activo{
+
+  }
+  &:disabled{
+
+  }
+  &:focus{
+    outline: 0 !important;
+  }
+}
+
+/* BTN FILTRO */
+.btn-filter {
+  @include btnBase;
+  border-radius: 24px !important;
+}
+
+
+@media screen and (max-width: $breakpointXS) {
+
+}
+
+
+@media screen and (max-width: $breakpointSM) {
+
+  .btn {
+    &--primario {
+      @include btnBaseXS;
+      &.button-validar,
+      &.button-validar-disabled{
+        .mat-button-wrapper{
+          line-height: 1 !important;
+        }
+      }
+    }
+  }
+  .mat-raised-button{
+    white-space: initial !important;
+    line-height: 1.2 !important;
+  }
+
+}
+
+
+@media screen and (max-width: $breakpointMD) {
+
+}
+
+
+@media screen and (max-width: $breakpointLG) {
+
+}
+
+/* Contenedor Botones stepper */
+.btn-accion {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-accion-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 450px) {
+  .btn-accion {
+    flex-direction: column-reverse;
+
+  }
+}
